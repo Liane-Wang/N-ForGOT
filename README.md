@@ -10,10 +10,11 @@ Official Implementation of "[**N-ForGOT: Towards Not-forgetting and Generalizati
 
 <div style="text-align:"><strong>TL;DR:</strong> This paper targets balancing knowledge preservation from existing data with swift adaptation to incoming, unseen classes in Open Temporal Graphs. </div>
 
-## **Datasets**
+## **Datasets and Checkpoints**
 
+We offer the processed datasets and the trained model for immediate use, available for download at [link].
 
-We provide the processed datasets for direct use which could be downloaded at 
+Please save the dataset files in the ‘data/’ directory and the .pth model files in the ‘log/’ directory.
 
 ## **Quick Start**
 
