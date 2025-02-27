@@ -26,6 +26,14 @@ conda activate NForGOT
 python run.py
 ```
 
+## **Acknowledgement**
+
+Thanks to [Hammer](https://github.com/liuhanmo321) for the support with the implementation earlier. I hope to hear good news about his paper soon.
+
+Thanks to the following open-source repositories for their support in building this implementation.
+[OTGNet](https://github.com/tulerfeng/OTGNet)
+[CGLB](https://github.com/QueuQ/CGLB)
+
 ## **Citation**
 
 Please kindly cite our paper if you use our model or code. 
