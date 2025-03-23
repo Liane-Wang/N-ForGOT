@@ -19,7 +19,7 @@ Please save the dataset files in the ‘data/’ directory and the .pth model fi
 ## **Quick Start**
 
 ```
-git clone 
+git clone https://github.com/Liane-Wang/N-ForGOT.git
 conda create --name NForGOT --file requirements.txt
 conda activate NForGOT
 
