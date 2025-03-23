@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 
-dataset='reddit'
+dataset='yelp_clear'
 model = 'TGAT' 
 method = 'NForGOT'
 
