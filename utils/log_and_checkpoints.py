@@ -3,6 +3,7 @@ from pathlib import Path
 import time
 import os
 import numpy as np
+import torch
 
 def set_logger(method,model, dataset, rp,filename, to_file):
   logger = logging.getLogger()
@@ -26,6 +27,10 @@ def set_logger(method,model, dataset, rp,filename, to_file):
   logger.info("Method:{}, Model:{}, Dataset:{}, Repeat time:{}".format(method,model, dataset,rp))
   return logger, timenow,day,based_path
 
+def checkavaliable(args):
+    if args.method == 'NForGOT' and args.dataset == 'yelp_clear':
+        return True
+    return False
 
 def get_checkpoint_path(based_path,epoch, task,uml):
   
@@ -68,4 +73,8 @@ class EarlyStopMonitor(object):
         self.epoch_count += 1
 
         return self.num_round >= self.max_round
-    
+
+def set_model(args, task):
+    mp = 'log/yelp_clear/' + str(task) +'.pth'
+    model = torch.load(mp).to(args.device)
+    return model

@@ -3,6 +3,7 @@ from random import sample
 import dill
 import torch
 import numpy as np
+import sys
 import json
 import math
 from torch.nn import init
@@ -14,9 +15,9 @@ from pathlib import Path
 from methods import get_model
 import copy
 from utils.data_processing import get_data, computer_time_statics,get_data_old
-from utils.utils import RandEdgeSampler,str2dict,set_seed,calculate_avg_performance_forgetting,average_result,get_neighbor_sampler
+from utils.utils import *
 from utils.evaluation import eval_prediction
-from utils.log_and_checkpoints import set_logger, get_checkpoint_path,EarlyStopMonitor
+from utils.log_and_checkpoints import *
 from models.Backbone import TemporalGNNClassifier
 import matplotlib.pyplot as plt
 import seaborn
@@ -385,11 +386,15 @@ for rp in range(rp_times):
         saved_model_paths = []
         mmd_time_epoch = 0
         epoch_end_time = 0
-        if args.method == 'NForGOT' and args.dataset == 'yelp_clear':
-            mp = 'log/yelp_clear' + str(task) +'.pth'
-            sgnn = torch.load(mp).to(args.device)
+        if checkavaliable(args):
+            sgnn = set_model(args,task)
             sgnn.eval()
+            # args.method == 'NForGOT' and args.dataset == 'yelp_clear':
+            #     mp = 'log/yelp_clear/' + str(task) +'.pth'
+            #     sgnn = torch.load(mp).to(args.device)
         else:
+            print("Please check avaliable model and dataset")
+            sys.exit("Exiting program due to unavailable model or dataset.")
             for e in range(args.n_epoch):
                 epoch_time = time.time()
                 print("task:",task,"epoch:",e)

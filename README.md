@@ -12,7 +12,7 @@ Official Implementation of "[**N-ForGOT: Towards Not-forgetting and Generalizati
 
 ## **Datasets and Checkpoints**
 
-We offer the processed datasets and the trained model for immediate use, available for download at [link].
+We offer the processed datasets and the trained model for immediate use, available for download at [link](https://drive.google.com/drive/u/1/folders/1fIabwkdw3D18cX5CP3Mo-xspshL4yRyj).
 
 Please save the dataset files in the ‘data/’ directory and the .pth model files in the ‘log/’ directory.
 

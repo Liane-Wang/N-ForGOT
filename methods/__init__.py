@@ -19,3 +19,4 @@ def get_model(args, neighbor_finder, node_features, edge_features, src_label, ds
     except ImportError:
         print(f"Method '{args.method}' not found.")
     return None
+
