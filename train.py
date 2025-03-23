@@ -389,9 +389,6 @@ for rp in range(rp_times):
         if checkavaliable(args):
             sgnn = set_model(args,task)
             sgnn.eval()
-            # args.method == 'NForGOT' and args.dataset == 'yelp_clear':
-            #     mp = 'log/yelp_clear/' + str(task) +'.pth'
-            #     sgnn = torch.load(mp).to(args.device)
         else:
             print("Please check avaliable model and dataset")
             sys.exit("Exiting program due to unavailable model or dataset.")
